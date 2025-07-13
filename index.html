@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather App | Real-time Weather Forecasts</title>
+    <meta name="description" content="Get accurate, real-time weather forecasts with Weather App. Check temperature, wind, humidity and 5-day forecasts for any location worldwide." />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="min-h-screen gradient-bg text-white font-sans">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold mb-2">Weather App</h1>
+            <p class="text-lg opacity-90">Get accurate weather forecasts anywhere</p>
+        </header>
+
+        <main class="max-w-md mx-auto">
+            <div class="weather-card p-6 mb-6 transition-all duration-300 fade-in">
+                <div class="flex items-center mb-6">
+                    <input 
+                        type="text" 
+                        id="location-input" 
+                        placeholder="Search for a city..." 
+                        class="search-input flex-grow bg-white bg-opacity-20 rounded-full py-3 px-5 text-white placeholder-white placeholder-opacity-70 focus:bg-opacity-30 transition-all duration-200"
+                    />
+                    <button id="search-btn" class="ml-3 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-3 transition-all duration-200">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <div id="current-weather" class="text-center">
+                    <div class="flex justify-center mb-4">
+                        <i class="fas fa-map-marker-alt mr-2 mt-1"></i>
+                        <h2 id="location" class="text-2xl font-semibold">Search for a location</h2>
+                    </div>
+
+                    <div id="weather-main" class="flex flex-col items-center justify-center">
+                        <div class="weather-icon text-8xl mb-4">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <div id="temperature" class="text-6xl font-bold mb-2">--°</div>
+                        <div id="weather-description" class="text-xl opacity-90 mb-4">--</div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4 mt-6">
+                        <div class="bg-white bg-opacity-10 rounded-lg p-3">
+                            <div class="flex items-center justify-center mb-1">
+                                <i class="fas fa-wind mr-2"></i>
+                                <span>Wind</span>
+                            </div>
+                            <div id="wind-speed" class="text-lg font-medium">-- km/h</div>
+                        </div>
+                        <div class="bg-white bg-opacity-10 rounded-lg p-3">
+                            <div class="flex items-center justify-center mb-1">
+                                <i class="fas fa-tint mr-2"></i>
+                                <span>Humidity</span>
+                            </div>
+                            <div id="humidity" class="text-lg font-medium">--%</div>
+                        </div>
+                        <div class="bg-white bg-opacity-10 rounded-lg p-3">
+                            <div class="flex items-center justify-center mb-1">
+                                <i class="fas fa-cloud-rain mr-2"></i>
+                                <span>Rain</span>
+                            </div>
+                            <div id="precipitation" class="text-lg font-medium">--%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="forecast" class="weather-card p-6 transition-all duration-300 fade-in">
+                <h3 class="text-xl font-semibold mb-4">5-Day Forecast</h3>
+                <div id="forecast-items" class="space-y-3">
+                    <div class="text-center py-4">
+                        <p>Search for a location to see forecast</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="text-center mt-12 text-sm opacity-70">
+            <p>© 2025 Mikiyas</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
